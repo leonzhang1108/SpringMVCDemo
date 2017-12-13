@@ -39,6 +39,16 @@ public class UserController {
         return "showUser";
     }
 
+    @RequestMapping(value = "/demoGet", method = RequestMethod.GET)
+    @ResponseBody
+    public User demoGet(HttpServletRequest request, Model model) {
+        User user = new User();
+        user.setId(1);
+        user.setName("leon");
+        user.setPassword("123123");
+        return user;
+    }
+
     /**
      * 上传头像  @RequestParam("uuid")String uuid
      */
