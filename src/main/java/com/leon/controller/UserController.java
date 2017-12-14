@@ -32,11 +32,10 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/showUser", method = RequestMethod.GET)
-    public String showUser(HttpServletRequest request, Model model) {
+    @ResponseBody
+    public List<User> showUser(HttpServletRequest request, Model model) {
 
-        List<User> userList = userService.selectAll();
-        model.addAttribute("userList", userList);
-        return "showUser";
+        return userService.selectAll();
     }
 
     @RequestMapping(value = "/demoGet", method = RequestMethod.GET)
