@@ -29,7 +29,7 @@ CREATE TABLE `user` (
 --  Records of `user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES ('1', 'chenkaihua', 'chenkaihua'), ('2', 'test_user', 'test'), ('3', '陈开华', 'mypassword'), ('6', 'myname', 'mypass'), ('7', 'chenhua', 'chss');
+INSERT INTO `user` VALUES ('1', 'leonzhang', 'leonzhang'), ('2', 'test_user', 'test'), ('3', '张健亮', 'zjl'), ('6', 'myname', 'mypass'), ('7', 'batman', 'brucewayne');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
