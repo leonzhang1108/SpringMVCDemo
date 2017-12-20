@@ -31,7 +31,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    private static String UPLOADED_FOLDER = "D:/tmp";
+    private static String UPLOADED_FOLDER = "";
 
     @RequestMapping(value = "/showUser", method = RequestMethod.GET)
     @ResponseBody
@@ -56,15 +56,15 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/uploadAvatar", method = RequestMethod.POST)
     public void uploadAvatar(HttpServletRequest request) {
-        System.out.println(request.getContextPath());
+        // 获取路径
+        if(UPLOADED_FOLDER.isEmpty()) UPLOADED_FOLDER = request.getServletContext().getRealPath("tmp");
+
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         // 获得文件：
         MultipartFile file = multipartRequest.getFile("file");
-
         //创建目录
         File dir = new File(UPLOADED_FOLDER);
         if(!dir.exists()) dir.mkdir();
-
         File fl = new File(UPLOADED_FOLDER, file.getOriginalFilename());
         InputStream input;
         try {

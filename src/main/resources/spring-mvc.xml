@@ -53,4 +53,12 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960"/>
     </bean>
+
+    <!--<bean id="propertyConfigurer"-->
+          <!--class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="location" value="classpath:file.properties"/>-->
+    <!--</bean>-->
+
+    <!--<mvc:resources mapping="/tmp/**" location="/tmp/" cache-period="31556926"/>-->
+
 </beans>
